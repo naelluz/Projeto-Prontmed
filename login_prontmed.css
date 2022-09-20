@@ -14,6 +14,7 @@ body {
   -webkit-box-pack: center;
   justify-content: center;
   background-image: url(login-background.svg);
+  background-repeat: no-repeat;
 }
 
 .header {
@@ -36,21 +37,78 @@ main {
   position: relative;
 }
 
-#bkg-img {  
-  width: 175px;
-} 
-
-.main-content {
+.ibox {
+  -webkit-box-align: center;
+  align-items: center;
   display: flex;
+  flex: 1 1 0%;
+  -webkit-box-pack: center;
   justify-content: center;
-  margin-top: 60px;
 }
 
 .login-form {
   width: 402px;
-
 } 
 
+.access-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.font-style {
+  color: rgb(74, 85, 101);
+  margin: 0px;
+  font-family: "Space Grotesk";
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 700;
+}
+
+.inp {
+  width: 100%;
+  margin-bottom: 12px;
+  -webkit-box-align: center;
+  align-items: center;
+  border-width: 1px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  color: rgb(50, 59, 72);
+  display: inline-flex;
+  padding: 8px 16px;
+  position: relative;
+  width: 400px;
+}
+
+.inp mail-form{
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  min-width: 50px;
+  box-sizing: border-box;
+}
+
+.lbl-form {
+  color: rgb(50, 59, 72);
+  font-weight: 700;
+  color: rgb(50, 59, 72);
+  margin: 0px;
+  font-family: "Space Grotesk";
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.input-form {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  height: 22px;
+  outline: none;
+  font-family: "Space Grotesk";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
 .footer {
   display: flex;
   flex-direction: column;
