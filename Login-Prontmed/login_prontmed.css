@@ -1,22 +1,67 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  outline: 0px;
+  font-family: "Space Grotesk";  
+}
+
+:root {
+  --cor-nova-branco: #f7f9fb;
+  --almost-white: #F6F8FA;
+}
+
 body {
-  background-color: #f7f9fb;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  display: block;
+}
+
+.all-cont {
+  background-color: var(--cor-nova-branco);
   display: flex;
   flex-direction: column;
-  min-height: 96vh;
-  width: 99vw;
+  min-height: 100vh;
+  width: 100vw;
   background-image: url(login-background.svg);
   background-repeat: no-repeat;
-  background-position: 100% 0%;
+  background-position: 100% 50%;
   background-size: auto 100vh;
 }
 
-.header {
-  text-align-last: center;
+.header-prontmed {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
   padding-top: 36px;
+  flex-direction: column;
 } 
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 .link-header {
   margin-left: 60px;
+}
+
+svg {
+  width: 215;
+  height: 50;
+  fill: rgb(50, 59, 72);
+}
+
+.ibox {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  flex: 1 1 0%;
+  -webkit-box-pack: center;
+  justify-content: center;
 }
 
 main {
@@ -25,35 +70,38 @@ main {
   position: relative;
 }
 
-.ibox {
-  display: flex;
-  justify-content: center;
+.login-form {
+  width: 402px;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.access-title {
   color: rgb(74, 85, 101);
   margin: 0px;
   font-family: "Space Grotesk";
   font-size: 30px;
   line-height: 38px;
   font-weight: 700;
-
 }
 
-.access-title {
-  text-align: center;
+.access-acount {
+  text-align: center !important;
   margin-bottom: 20px;
 }
 
-.main-content{
-  width: 402px;
+::before, ::after {
+  box-sizing: inherit;
+}
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 .mail-form {
-  width: 100%;
-  margin-bottom: 12px;
   -webkit-box-align: center;
   align-items: center;
   border-width: 1px;
@@ -65,26 +113,35 @@ h2 {
   position: relative;
 }
 
-.input-mail {
+.mail-form * {
   box-sizing: border-box;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 12px;  
+}
+
+.input-mail {
   display: flex;
   flex: 1 1 0%;
   flex-direction: column;
-  min-width: 50px;
+  min-width: 50px;;
+}
+
+.mail-form .mail-class {
+  color: rgb(50, 59, 72);
+}
+
+.input > div > label {
+  font-weight: 700;
 }
 
 .lbl-form {
-  color: rgb(50, 59, 72);
-  font-weight: 700;
-  box-sizing: border-box;
   margin: 0px;
   font-family: "Space Grotesk";
   font-size: 12px;
   line-height: 18px;
-}
-
-::placeholder {
-  color: #D3D3D3;
 }
 
 .input-form {
@@ -99,9 +156,70 @@ h2 {
   line-height: 24px;
 }
 
-.access-button {
+::placeholder {
+  color: #D3D3D3;
+}
+
+.pass {
   width: 100%;
-  background-color: rgb(67, 92, 132);
+  margin-bottom: 12px;  
+}
+
+.hidden-pass {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-left: 8px; 
+}
+
+.mail-form svg {
+  fill: rgb(50, 59, 72);
+}
+
+.svg-h-pass {
+  cursor: pointer;
+}
+
+.more-info {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.doubt {
+  color: rgb(74, 85, 101);
+  margin: 0px;
+  font-family: "Space Grotesk";
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.more-info a{
+  margin-left: 4px;
+}
+
+.mail-to {
+  font-weight: bold;
+}
+
+.mail-doubt {
+  background-color: transparent;
+  border: none;
+  color: rgb(68, 192, 188) !important;
+  cursor: pointer;
+  padding: 0px;
+  text-decoration: underline;
+  font-family: "Space Grotesk";
+  font-size: 16px;
+  line-height: 24px; 
+}
+
+.access-button {
   font-family: "Space Grotesk";
   font-weight: 400;
   font-size: 16px;
@@ -125,35 +243,9 @@ h2 {
   min-width: 88px;
 }
 
-.more-info {
-  display: flex;
-  flex-direction: column;
-  -webkit-box-align: center;
-  align-items: center;
-  margin: 20px 0px;
-}
-
-.doubt {
-  color: rgb(74, 85, 101);
-  margin: 0px;
-  font-family: "Space Grotesk";
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 700;
-}
-
-.mail-doubt {
-  margin-left: 4px;
-  font-weight: bold;
-  background-color: transparent;
-  border: none;
-  color: rgb(68, 192, 188);
-  cursor: pointer;
-  padding: 0px;
-  text-decoration: underline;
-  font-family: "Space Grotesk";
-  font-size: 16px;
-  line-height: 24px;
+.blue-btn {
+  width: 100%;
+  background-color: rgb(67, 92, 132);
 }
 
 .footer {
@@ -181,6 +273,14 @@ h2 {
   font-weight: 400;
 }
 
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
 .social {
   -webkit-box-align: center;
   align-items: center;
@@ -189,3 +289,4 @@ h2 {
   justify-content: space-between;
   width: 200px;
 }
+
