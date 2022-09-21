@@ -6,15 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Teste QA" />
+  <meta name="description" content="Teste QA Natanael" />
   <link href="login_prontmed.css" rel="stylesheet">
-  <link rel="manifest" href="/manifest.json" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
   <title>Teste QA Natanael</title>
-  <script defer="defer" src="/static/js/main.271d1f39.js"></script>
-  <link href="/static/css/main.98fbd29e.css" rel="stylesheet" />
-  <style data-styled="active" data-styled-version="5.3.5"></style>
+  <script src="login_prontmed.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </head>
 
 <body>
@@ -71,13 +70,14 @@
         </a>
       </header>
       <main class="ibox">
-        <form class="login-form">
+        <form class="login-form" name="login">
           <h2 color="global-gray-medium" class="access-title access-acount">Acesse sua conta</h2>
           <div class="inp">
             <div class="mail-form input">
               <div class="input-mail">
                 <label color="global-gray-medium" class="lbl-form mail-class lbl-mail">E-mail </label>
-                <input placeholder="Digite seu e-mail" required type="mail" class="input-form" />
+                <input placeholder="Digite seu e-mail" required type="mail" class="input-form" name="mail" id="mail"
+                  onblur="validateMail(login.mail)" />
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@
               <div class="input-mail">
                 <label color="global-gray-dark" class="lbl-form mail-class lbl-mail" style="font-weight: bold;">Senha
                 </label>
-                <input placeholder="Digite sua senha" required type="password" class="input-form" />
+                <input placeholder="Digite sua senha" required type="password" class="input-form" name="pass" />
               </div>
               <div class="hidden-pass">
                 <svg viewBox="0 0 24 25" fill="rgba(50, 59, 72, 1)" xmlns="http://www.w3.org/2000/svg" role="img"
@@ -103,7 +103,7 @@
             <a type="button" href="mailto:natasha.bauer@prontmed.com.br"
               class="mail-doubt mail-to">natasha.bauer@prontmed.com.br</a>
           </div>
-          <button type="submit" role="button" class="access-button blue-btn">Acessar</button>
+          <button type="submit" role="button" class="access-button blue-btn" onclick="validate_login()">Acessar</button>
         </form>
       </main>
       <footer class="footer">
