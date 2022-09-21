@@ -1,0 +1,380 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    outline: 0px;
+    font-family: "Space Grotesk";
+}
+
+div {
+    display: block;
+}
+
+:root {
+    --cor-nova-branco: #f7f9fb;
+    --almost-white: #F6F8FA;
+}
+
+.exit {
+    box-shadow: rgb(0 0 0 / 50%) 0px 1px 14px 2px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+::before, ::after {
+    box-sizing: inherit;
+}
+
+.btn-exit-op {
+    border-radius: 4px;
+    padding: 12px 0px;
+    width: 222px;    
+}
+
+.btn-exit {
+    background-color: transparent;
+    border: none;
+    color: rgb(68, 192, 188);
+    cursor: pointer;
+    padding: 0px;
+    text-decoration: underline;
+    font-family: "Space Grotesk";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.icon-exit {
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 38px;
+    text-decoration: none;
+    padding-left: 24px;
+}
+
+button {
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-image: initial;
+}
+
+.icon-exit-svg {
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+.exit-txt svg {
+    fill: rgb(176, 39, 45);
+    width: 24;
+    height: 24;
+}
+
+.exit-txt {
+    color: rgb(175, 0, 5);
+    margin: 0px;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.ibox {
+    display: grid;
+    grid-template:
+        "sidebar header" 88px
+        "sidebar main" calc(100vh - 88px) / 2fr 10fr;
+    gap: 0px;
+}
+
+nav {
+    display: block;
+}
+
+.ibox .sidebar {
+    grid-area: sidebar / sidebar / sidebar / sidebar;
+}
+
+.sideb-div {
+    align-items: flex-start;
+    background-color: rgb(67, 92, 132);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-width: 228px;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    padding: 24px;
+}
+
+.link-img {
+    margin-bottom: 44px;
+}
+
+a:-webkit-any-link:active {
+    color: -webkit-activelink;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.div-home {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
+.icon-home {
+    align-self: flex-start;
+    transition: all 0.3s ease-out 0s;
+}
+
+.icon-home svg {
+    fill: rgb(255, 255, 255);
+    width: 24;
+    height: 24;
+}
+
+.home-adm-txt {
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.home {
+    margin-left: 12px;
+    padding: 0px 2px 2px 0px;
+    position: relative;
+    transition: all 0.5s ease-out 0s;
+}
+
+.home::before {
+    background-color: rgb(255, 255, 255);
+    bottom: 0px;
+    content: "";
+    height: 3px;
+    left: 0px;
+    position: absolute;
+    transition: all 0.5s ease-out 0s;
+    width: 0px;
+}
+
+.div-adm {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
+.icon-adm {
+    align-self: flex-start;
+    transition: all 0.3s ease-out 0s;
+    fill: rgb(68, 192, 188);
+}
+
+.icon-adm svg {
+    width: 24;
+    height: 24;
+}
+
+.adm {
+    margin-left: 12px;
+    padding: 0px 2px 2px 0px;
+    position: relative;
+    transition: all 0.5s ease-out 0s;
+    color: rgb(68, 192, 188);
+}
+
+.adm::before {
+    background-color: rgb(68, 192, 188);
+    width: 100%;
+    bottom: 0px;
+    content: "";
+    height: 3px;
+    left: 0px;
+    position: absolute;
+    transition: all 0.5s ease-out 0s;
+}
+
+.ibox .header {
+    grid-area: header / header / header / header;
+}
+
+.adm-header {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    background-color: var(--almost-white);
+    padding: 24px 20px 28px 32px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    height: 88px;
+    width: 100%;
+    user-select: none;
+    border-bottom: none;
+}
+
+.adm-h-text {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.adm-p {
+    color: rgb(50, 59, 72);
+    margin: 0px;
+    font-family: "Space Grotesk";
+    font-size: 30px;
+    line-height: 38px;
+    font-weight: 700;
+}
+
+.user-div {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.icons-user-div {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.user-pic {
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(211, 219, 230);
+    border-radius: 50%;
+    color: rgb(50, 59, 72);
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 40px;
+    overflow: hidden;
+    width: 40px;
+    font-family: "Space Grotesk";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.txt-icon-div {
+    display: flex;
+}
+
+.txt-icon {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 36px;
+    min-width: 136px;
+    padding: 0px 8px;
+    background-color: var(--almost-white);
+    border-radius: 4px;
+}
+
+.hello {
+    color: rgb(136, 148, 165);
+    margin: 0px;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.username{
+    color: rgb(74, 85, 101);
+    margin: 0px;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.hello-user-svg {
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+.ibox .main {
+    grid-area: main / main / main / main;
+}
+
+.adm-area {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 88px);
+    width: 100%;
+    background-color: var(--almost-white);
+    padding: 0px 18px;
+}
+
+main {
+    height: calc(100vh - 64px);
+    overflow: auto;
+    position: relative;
+}
+
+.adm-area-txt {
+    color: rgb(74, 85, 101);
+    margin: 0px;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
