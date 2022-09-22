@@ -128,6 +128,19 @@
           <input type="submit" role="button" class="access-button blue-btn" value="Acessar" id="access" />
           <script>
             function sendData() {
+              ///testar com o código abaixo no lugar do if
+              //precisa colocar o value nos inputs de email e senha, assim conseguimos ver o valor exato
+              //confirmar o .value depois do name
+
+              /*  var mail = document.getElementsByName('mail').value();
+                  var pass = document.getElementsByName('pass').value();
+  
+                  if((mail = "admin@prontmed.com.br" && pass = "admin1234*") 
+                  || (mail = "secretaria@prontmed.com.br" && pass = "secretaria1234*"))
+              */
+
+              //a partir daqui segue normal no const acesso ...
+
               if ((document.login.mail == "admin@prontmed.com.br" && document.login.pass == "admin1234*")
                 || (document.login.mail == "secretaria@prontmed.com.br" && document.login.pass == "secretaria1234*")) {
 
