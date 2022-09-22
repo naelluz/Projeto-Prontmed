@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+  <title>Teste QA Natanael</title>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,13 +12,13 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" />
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
-  <title>Teste QA Natanael</title>
-  <script src="login_prontmed.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <!--<script src="login.js"></script>-->
 </head>
 
 <body>
   <div class="root">
+    <div class="Toastify"></div>
     <div class="all-cont">
       <header class="header-prontmed">
         <a href="https://www.prontmed.com/" class="link-header" target="_blank">
@@ -70,14 +71,25 @@
         </a>
       </header>
       <main class="ibox">
-        <form class="login-form" name="login">
+        <form class="login-form" name="login" method="post" onsubmit="sendData();">
           <h2 color="global-gray-medium" class="access-title access-acount">Acesse sua conta</h2>
           <div class="inp">
             <div class="mail-form input">
               <div class="input-mail">
                 <label color="global-gray-medium" class="lbl-form mail-class lbl-mail">E-mail </label>
-                <input placeholder="Digite seu e-mail" required type="mail" class="input-form" name="mail" id="mail"
-                  onblur="validateMail(login.mail)" />
+                <input placeholder="Digite seu e-mail" type="mail" class="input-form" name="mail"
+                  onchange="validateMail();" />
+                <script>
+                  function validateMail() {
+                    if (document.login.mail.value == "" ||
+                      document.login.mail.value.indexOf('@') == -1 ||
+                      document.login.mail.value.indexOf('.') == -1) {
+                      alert("Preencha campo E-mail corretamente!");
+                      document.login.mail.focus();
+                      return false;
+                    }
+                  }
+                </script>
               </div>
             </div>
           </div>
@@ -86,7 +98,17 @@
               <div class="input-mail">
                 <label color="global-gray-dark" class="lbl-form mail-class lbl-mail" style="font-weight: bold;">Senha
                 </label>
-                <input placeholder="Digite sua senha" required type="password" class="input-form" name="pass" />
+                <input placeholder="Digite sua senha" type="password" class="input-form" name="pass"
+                  onchange="validatePass();" />
+                <script>
+                  function validatePass() {
+                    if (document.login.pass.value == "") {
+                      alert("Preencha campo Senha corretamente!");
+                      document.login.pass.focus();
+                      return false;
+                    }
+                  }
+                </script>
               </div>
               <div class="hidden-pass">
                 <svg viewBox="0 0 24 25" fill="rgba(50, 59, 72, 1)" xmlns="http://www.w3.org/2000/svg" role="img"
@@ -103,7 +125,19 @@
             <a type="button" href="mailto:natasha.bauer@prontmed.com.br"
               class="mail-doubt mail-to">natasha.bauer@prontmed.com.br</a>
           </div>
-          <button type="submit" role="button" class="access-button blue-btn" onclick="validate_login()">Acessar</button>
+          <input type="submit" role="button" class="access-button blue-btn" value="Acessar" id="access" />
+          <script>
+            function sendData() {
+              if ((document.login.mail == "admin@prontmed.com.br" && document.login.pass == "admin1234*")
+                || (document.login.mail == "secretaria@prontmed.com.br" && document.login.pass == "secretaria1234*")) {
+
+                const acesso = document.getElementById('access');
+                acesso.onclick = function () {
+                  window.location.href = "C:\Users\Samsung\Documents\Projeto Prontmed\Projeto-Prontmed\Login-Prontmed\app-prontmed.html"
+                }
+              }
+            }
+          </script>
         </form>
       </main>
       <footer class="footer">
