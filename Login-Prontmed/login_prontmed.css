@@ -31,12 +31,12 @@ body {
 
 .header-prontmed {
   -webkit-box-align: center;
-  align-items: left;
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
-  padding-top: 36px;
+  padding-top: 30px;
   flex-direction: column;
+  margin-left: 30px;
 } 
 
 a:-webkit-any-link {
@@ -45,14 +45,14 @@ a:-webkit-any-link {
   text-decoration: underline;
 }
 
-.link-header {
-  margin-left: 60px;
-}
-
 svg {
   width: 215;
   height: 50;
   fill: rgb(50, 59, 72);
+}
+
+#logo-header {
+  justify-content: left;
 }
 
 .ibox {
