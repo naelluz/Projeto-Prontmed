@@ -31,7 +31,7 @@ body {
 
 .header-prontmed {
   -webkit-box-align: center;
-  align-items: center;
+  align-items: left;
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
