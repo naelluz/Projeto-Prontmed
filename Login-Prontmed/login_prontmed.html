@@ -16,7 +16,6 @@
 
 <body>
   <div class="root">
-    <div class="Toastify"></div>
     <div class="all-cont">
       <header class="header-prontmed">
         <svg width="215" height="50" fill="rgba(50, 59, 72, 1)" xmlns="http://www.w3.org/2000/svg" role="img"
@@ -69,22 +68,26 @@
         </svg>
       </header>
       <main class="ibox">
-        <form class="login-form" name="login" method="post" onsubmit="sendData();">
+        <form class="login-form" name="login" method="post" action = "./app-prontmed.html" >
           <h2 color="global-gray-medium" class="access-title access-acount">Acesse sua conta</h2>
           <div class="inp">
             <div class="mail-form input">
               <div class="input-mail">
                 <label color="global-gray-medium" class="lbl-form mail-class lbl-mail">Usuário </label>
-                <input placeholder="Digite seu e-mail" type="mail" class="input-form" name="mail" />
+                <input placeholder="Digite seu e-mail" type="mail" class="input-form" name="mail" required />
               </div>
             </div>
           </div>
           <div class="inp">
             <div class="mail-form pass">
               <div class="input-mail">
-                <label color="global-gray-dark" class="lbl-form mail-class lbl-mail" style="font-weight: bold;">Senha
+                <label color="global-gray-dark" class="lbl-form mail-class lbl-mail" style="font-weight: bold;"
+                  for="senha">Senha
                 </label>
-                <input placeholder="Digite sua senha" type="password" class="input-form" id="pass" name="pass" />
+                <input placeholder="Digite sua senha" type="password" class="input-form" id="pass" name="pass"
+                  pattern="^(?=.*[a-z])(?=.*[0-9]).{8,20}$"
+                  title="A senha deve conter no mínimo 8 caracteres e deve conter letras e números." required>
+
               </div>
               <div class="hidden-pass">
                 <svg id="eye" viewBox="0 0 24 25" fill="rgba(50, 59, 72, 1)" xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +104,7 @@
             <a type="button" href="mailto:natasha.bauer@prontmed.com.br"
               class="mail-doubt mail-to">natasha.bauer@prontmed.com.br</a>
           </div>
-          <input type="submit" role="button" class="access-button blue-btn" value="Acessar" id="access" onclick="return validateform();login()"/>
+          <input type="submit" class="access-button blue-btn" value="Acessar" name="access" onclick="return Login()" />
           <script>
             function show() {
               var p = document.getElementById('pass');
@@ -125,41 +128,25 @@
               }
             }, false);
 
-            function validateform() {
-              var mail = document.login.mail.value;
-              var atposition = mail.indexOf("@");  
-              var dotposition = mail.lastIndexOf(".");  
-              var password = document.login.pass.value;
+            var usuarios = [
+              { "login": "admin@prontmed.com.br", "senha": "admin1234*" },
+              { "login": "secretaria@prontmed.com.br", "senha": "secretaria1234*" },
+            ];
 
-              if (mail == null || mail == "" || atposition<1 || dotposition<atposition+2 || dotposition+2>=mail.length){  
-                  alert("Digite um e-mail válido.");  
-                  return false;  
-              }    
-              else if(password.length<8){  
-                alert("Senha deve conter ao menos 8 caracteres.");  
-                return false;  
-              }     
+            function Login() {
+              var usuario = document.getElementsByName('mail')[0].value.toLowerCase();
+              var senha = document.getElementsByName('pass')[0].value;
 
-             
-            }
-
-            function login() {
-              ///testar com o código abaixo no lugar do if
-              //precisa colocar o value nos inputs de email e senha, assim conseguimos ver o valor exato
-              //confirmar o .value depois do name
-
-               var mail = document.getElementsByName('mail').value();
-               var pass = document.getElementsByName('pass').value();
-  
-                  if((mail = "admin@prontmed.com.br" && pass == "admin1234*") 
-                      || (mail = "secretaria@prontmed.com.br" && pass == "secretaria1234*")){
-           
-              const acesso = document.getElementById('access');
-              acesso.onclick = function () {
-              window.location.href = "http://127.0.0.1:5500/Login-Prontmed/app-prontmed.html"
+              for (var u in usuarios) {
+                var us = usuarios[u];
+                if (us.login === usuario && us.senha === senha) {
+                  window.location = "./app-prontmed.html";
+                  return true;
                 }
               }
+              
             }
+
           </script>
         </form>
       </main>
