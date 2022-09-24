@@ -39,6 +39,11 @@ body {
   margin-left: 30px;
 } 
 
+.link-header{
+  width: 215px;
+  height: 55px;
+}
+
 a:-webkit-any-link {
   color: -webkit-link;
   cursor: pointer;
