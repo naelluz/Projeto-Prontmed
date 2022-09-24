@@ -24,14 +24,15 @@ div {
     z-index: 1;
 }
 
-::before, ::after {
+::before,
+::after {
     box-sizing: inherit;
 }
 
 .btn-exit-op {
     border-radius: 4px;
     padding: 12px 0px;
-    width: 222px;    
+    width: 222px;
 }
 
 .btn-exit {
@@ -151,6 +152,15 @@ a:-webkit-any-link {
     text-decoration: underline;
 }
 
+.txt-home-adm {
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
 .div-home {
     -webkit-box-align: center;
     align-items: center;
@@ -165,21 +175,7 @@ a:-webkit-any-link {
 .icon-home {
     align-self: flex-start;
     transition: all 0.3s ease-out 0s;
-}
-
-.icon-home svg {
     fill: rgb(255, 255, 255);
-    width: 24;
-    height: 24;
-}
-
-.home-adm-txt {
-    color: rgb(255, 255, 255);
-    margin: 0px;
-    font-family: "Space Grotesk";
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
 }
 
 .home {
@@ -187,18 +183,7 @@ a:-webkit-any-link {
     padding: 0px 2px 2px 0px;
     position: relative;
     transition: all 0.5s ease-out 0s;
-}
-
-.home::before {
-    background-color: rgb(255, 255, 255);
-    bottom: 0px;
-    content: "";
-    height: 3px;
-    left: 0px;
-    position: absolute;
-    transition: all 0.5s ease-out 0s;
-    width: 0px;
-}
+    }
 
 .div-adm {
     -webkit-box-align: center;
@@ -217,28 +202,12 @@ a:-webkit-any-link {
     fill: rgb(68, 192, 188);
 }
 
-.icon-adm svg {
-    width: 24;
-    height: 24;
-}
-
 .adm {
     margin-left: 12px;
     padding: 0px 2px 2px 0px;
     position: relative;
     transition: all 0.5s ease-out 0s;
     color: rgb(68, 192, 188);
-}
-
-.adm::before {
-    background-color: rgb(68, 192, 188);
-    width: 100%;
-    bottom: 0px;
-    content: "";
-    height: 3px;
-    left: 0px;
-    position: absolute;
-    transition: all 0.5s ease-out 0s;
 }
 
 .ibox .header {
@@ -337,7 +306,7 @@ a:-webkit-any-link {
     font-weight: 700;
 }
 
-.username{
+.username {
     color: rgb(74, 85, 101);
     margin: 0px;
     font-family: "Space Grotesk";
