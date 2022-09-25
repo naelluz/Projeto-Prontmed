@@ -7,9 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Teste QA Natanael" />
+  <base href="/">
   <link href="login_prontmed.css" rel="stylesheet">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" />
+  <link rel="stylesheet" href="iziToast.min.css">
+  <script src="iziToast.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -188,7 +191,12 @@
     } else if (login == "secretaria@prontmed.com.br" && senha == "secretaria1234*") {
       location.href = "home.html";
     } else {
-      alert("Usuário ou senha incorretos");
+      iziToast.error({
+        title: 'Atenção: ',
+        message: 'Usuário ou senha incorretos',
+        color: 'red',
+        position: 'topRight'
+      });
     }
   }
 </script>
