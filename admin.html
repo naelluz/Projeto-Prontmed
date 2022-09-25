@@ -18,7 +18,7 @@
         <div class="exit btn-exit-op"
             style="position: absolute; inset: 0px 0px auto auto; transform: translate(-28px, 70px);"
             data-popper-reference-hidden="false" data-popper-escaped="false" data-popper-placement="bottom-end">
-            <div class="icon-exit-div">
+            <div class="icon-exit-div" onclick="sair()">
                 <button type="button" class="btn-exit icon-exit">
                     <svg viewBox="0 0 24 25" fill="rgba(176, 39, 45, 1)" xmlns="http://www.w3.org/2000/svg" role="img"
                         aria-label="logout-outline" width="24" height="24" class="icon-exit-svg">
@@ -35,7 +35,7 @@
                 <a href="https://www.prontmed.com/" target="_blank" class="link-img">
                     <img src="https://prontmed-teste-qa.netlify.app/static/media/prontmed-logo-dark-bg.cc8ad2744c270fd7aea95cab89bae8c9.svg"
                         alt="Logo Prontmed"></a>
-                <div class="div-home">
+                <div class="div-home" onclick="home()">
                     <svg viewBox="0 0 24 25" fill="rgba(255, 255, 255, 1)" xmlns="http://www.w3.org/2000/svg" role="img"
                         aria-label="perfil-outline" width="24" height="24" class="icon-home">
                         <path
@@ -44,7 +44,7 @@
                     </svg>
                     <p color="global-white" class="txt-home-adm home">Home</p>
                 </div>
-                <div class="div-adm">
+                <div class="div-adm" onclick="admin()">
                     <svg viewBox="0 0 24 24" fill="rgba(255, 255, 255, 1)" xmlns="http://www.w3.org/2000/svg" role="img"
                         aria-label="star-outline" width="24" height="24" class="icon-adm">
                         <path
@@ -58,7 +58,7 @@
                 <div class="adm-h-text">
                     <p color="global-gray-dark" class="adm-p">Administrativo</p>
                 </div>
-                <div class="user-div">
+                <div class="user-div" id="btn-div">
                     <div class="icons-user-div">
                         <div size="40" aria-label="userPic" class="user-pic user-class">
                             <svg viewBox="0 0 24 25" fill="rgba(255, 255, 255, 1)" xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@
                         <div class="txt-icon-div">
                             <div class="txt-icon">
                                 <p color="global-gray-regular" class="hello">Olá,&nbsp;</p>
-                                <p color="global-gray-medium" class="username">Leila</p>
+                                <p color="global-gray-medium" class="username">Mariela</p>
                                 <svg viewBox="0 0 24 24" fill="rgba(50, 59, 72, 1)" xmlns="http://www.w3.org/2000/svg"
                                     role="img" aria-label="chevron-down-small" width="16" height="16"
                                     class="hello-user-svg">
@@ -94,12 +94,26 @@
 </html>
 
 
-<!--
-    if (usuario == adm) {
-        location.href = "adm.html"
-    } else if {usuario == secretaria} {
-        location.href = "secretaria.html"
+<script>
+    function home() {
+        location.href = "home-admin.html"
+    }
+    function admin() {
+        location.href = "admin.html"
+    }
+    function sair() {
+        location.href = "login_prontmed.html"
     }
 
+    var btn = document.getElementById('btn-div');
+    var container = document.querySelector('.exit');
+    btn.addEventListener('click', function () {
 
--->
+        if (container.style.display === 'block') {
+            container.style.display = 'none';
+        } else {
+            container.style.display = 'block';
+        }
+    });
+
+</script>

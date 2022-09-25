@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "izitoast": "^1.4.0"
+    "cors": "^2.8.5"
   }
 }

@@ -10,7 +10,6 @@
   <link href="login_prontmed.css" rel="stylesheet">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" />
-    <script src="app-prontmed.js" type="module"></script>  
 </head>
 
 <body>
@@ -156,3 +155,40 @@
 </body>
 
 </html>
+<script>
+  function show() {
+    var p = document.getElementById('pass');
+    p.setAttribute('type', 'text');
+  }
+
+  function hide() {
+    var p = document.getElementById('pass');
+    p.setAttribute('type', 'password');
+  }
+
+  var pwShown = 0;
+
+  document.getElementById("eye").addEventListener("click", function () {
+    if (pwShown == 0) {
+      pwShown = 1;
+      show();
+    } else {
+      pwShown = 0;
+      hide();
+    }
+  }, false);
+
+  function Login() {
+
+    var login = document.getElementById("mail").value;
+    var senha = document.getElementById("pass").value;
+
+    if (login == "admin@prontmed.com.br" && senha == "admin1234*") {
+      location.href = "home-admin.html";
+    } else if (login == "secretaria@prontmed.com.br" && senha == "secretaria1234*") {
+      location.href = "home.html";
+    } else {
+      alert("Usuário ou senha incorretos");
+    }
+  }
+</script>
