@@ -107,7 +107,12 @@
     }, 200);
 
     function admin() {
-        alert("Você não tem acesso a essa função")
+        iziToast.error({
+        title: 'Atenção: ',
+        message: 'Você não tem acesso a essa função.',
+        color: 'red',
+        position: 'topRight'
+      });
     }
     function sair() {
         location.href = "login_prontmed.html"
